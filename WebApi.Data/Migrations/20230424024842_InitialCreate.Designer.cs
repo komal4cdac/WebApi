@@ -11,9 +11,9 @@ using WebApi.Data.Entities;
 
 namespace WebApi.Data.Migrations
 {
-    [DbContext(typeof(MyWorldDbContext))]
-    [Migration("20230421093521_MyWorldDB")]
-    partial class MyWorldDB
+    [DbContext(typeof(MyTestDBContext))]
+    [Migration("20230424024842_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApi.Data.Entities;
 
 #nullable disable
 
-namespace WebApi.Data.Migrations.MyTestDB
+namespace WebApi.Data.Migrations
 {
     [DbContext(typeof(MyTestDBContext))]
-    [Migration("20230421101124_MyTestDB")]
-    partial class MyTestDB
+    partial class MyTestDBContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

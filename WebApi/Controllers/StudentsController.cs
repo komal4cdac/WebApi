@@ -8,8 +8,8 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class StudentsController : ControllerBase
     {
-        private readonly MyWorldDbContext _myWorldDbContext;
-        public StudentsController(MyWorldDbContext myWorldDbContext)
+        private readonly MyTestDBContext _myWorldDbContext;
+        public StudentsController(MyTestDBContext myWorldDbContext)
         {
             _myWorldDbContext = myWorldDbContext;
         }

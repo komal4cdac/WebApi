@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace WebApi.Data.Migrations.MyTestDB
+namespace WebApi.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class MyTestDB : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
