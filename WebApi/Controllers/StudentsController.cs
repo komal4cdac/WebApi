@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using WebApi.Contracts.RepositoryWrapper;
 using WebApi.Data.Entities;
+using WebApi.Repository;
 
 namespace WebApi.Controllers
 {
@@ -8,17 +10,27 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class StudentsController : ControllerBase
     {
-        private readonly MyWorldDbContext _myWorldDbContext;
-        public StudentsController(MyWorldDbContext myWorldDbContext)
+        private readonly IRepositoryWrapper repository;
+        public StudentsController(IRepositoryWrapper repositoryWrapper)
         {
-            _myWorldDbContext = myWorldDbContext;
+            repository= repositoryWrapper;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAsync()
+        public IActionResult GetAllStudents()
         {
-            var students = await _myWorldDbContext.Students.ToListAsync();
+            var students = repository.Student.FindAll();
+
             return Ok(students);
+           
+        }
+        [HttpGet]
+        public IActionResult GetStudentById(int Id)
+        {
+            var students = repository.Student.GetStudentById(Id);
+                
+            return Ok(students);
+
         }
 
 
