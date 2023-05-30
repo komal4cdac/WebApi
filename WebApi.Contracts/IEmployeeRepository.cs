@@ -7,9 +7,9 @@ using WebApi.Data.Entities;
 
 namespace WebApi.Contracts
 {
-    public interface IStudentRepository : IRepositoryBase<Students>
+    public interface IEmployeeRepository : IRepositoryBase<Employees>
     {
-        public Students GetStudentById(int Id);
+        public Employees GetStudentById(int Id);
         void FindByCondition(Guid guid);
     }
 

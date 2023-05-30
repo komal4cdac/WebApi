@@ -14,8 +14,8 @@ namespace WebApi.UnitTests.Mocks
         public static Mock<IRepositoryWrapper> GetMock()
         {
             var mock = new Mock<IRepositoryWrapper>();
-            var studentRepoMock = MockIStudentRepository.GetMock();
-            mock.Setup(m => m.Student).Returns(() => studentRepoMock.Object);
+            var employeeRepoMock = MockIEmployeeRepository.GetMock();
+            mock.Setup(m => m.Employee).Returns(() => employeeRepoMock.Object);
             
             mock.Setup(m => m.Save()).Callback(() => { return; });
             return mock;

@@ -10,7 +10,7 @@ using WebApi.Data.Entities;
 
 namespace WebApi.UnitTests.Mocks
 {
-    public class StudentControllerTests
+    public class EmployeeControllerTests
     {
         [Fact]
         public void WhenGettingAllStudents_ThenAllStudentsReturn()
@@ -18,13 +18,13 @@ namespace WebApi.UnitTests.Mocks
             var repositoryWrapperMock = MockIRepositoryWrapper.GetMock();
            // var mapper = GetMapper();
            // var logger = new LoggerManager();
-            var studentsController = new StudentsController( repositoryWrapperMock.Object);
+            var studentsController = new EmployeeController( repositoryWrapperMock.Object);
 
             var result = studentsController.GetAllStudents() as ObjectResult;
             Assert.NotNull(result);
             Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
-            Assert.IsAssignableFrom<IEnumerable<Students>>(result.Value);
-            Assert.NotEmpty(result.Value as IEnumerable<Students>);
+            Assert.IsAssignableFrom<IEnumerable<Employees>>(result.Value);
+            Assert.NotEmpty(result.Value as IEnumerable<Employees>);
         }
         [Fact]
         public void GivenAnIdOfAnExistingStudent_WhenGettingStudentById_ThenStudentReturns()
@@ -32,13 +32,13 @@ namespace WebApi.UnitTests.Mocks
             var repositoryWrapperMock = MockIRepositoryWrapper.GetMock();
            // var mapper = GetMapper();
            // var logger = new LoggerManager();
-            var studentsController = new StudentsController( repositoryWrapperMock.Object);
+            var studentsController = new EmployeeController( repositoryWrapperMock.Object);
             int id = 2;
             var result = studentsController.GetStudentById(id) as ObjectResult;
             Assert.NotNull(result);
             Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
-            Assert.IsAssignableFrom<Students>(result.Value);
-            Assert.NotNull(result.Value as Students);
+            Assert.IsAssignableFrom<Employees>(result.Value);
+            Assert.NotNull(result.Value as Employees);
         }
     }
 }

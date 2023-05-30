@@ -8,10 +8,10 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class StudentsController : ControllerBase
+    public class EmployeeController : ControllerBase
     {
         private readonly IRepositoryWrapper repository;
-        public StudentsController(IRepositoryWrapper repositoryWrapper)
+        public EmployeeController(IRepositoryWrapper repositoryWrapper)
         {
             repository= repositoryWrapper;
         }
@@ -19,17 +19,17 @@ namespace WebApi.Controllers
         [HttpGet]
         public IActionResult GetAllStudents()
         {
-            var students = repository.Student.FindAll();
+            var employees = repository.Employee.FindAll();
 
-            return Ok(students);
+            return Ok(employees);
            
         }
         [HttpGet]
         public IActionResult GetStudentById(int Id)
         {
-            var students = repository.Student.GetStudentById(Id);
+            var employees = repository.Employee.GetStudentById(Id);
                 
-            return Ok(students);
+            return Ok(employees);
 
         }
 

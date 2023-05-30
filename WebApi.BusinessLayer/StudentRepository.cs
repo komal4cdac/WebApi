@@ -8,9 +8,9 @@ using WebApi.Data.Entities;
 
 namespace WebApi.Repository
 {
-    public class StudentRepository : RepositoryBase<Students>, IStudentRepository
+    public class StudentRepository : RepositoryBase<Employees>, IEmployeeRepository
     {
-        public StudentRepository(MyWorldDbContext myWorldDBContext)
+        public StudentRepository(EmployeeDbContext myWorldDBContext)
             : base(myWorldDBContext)
         {
 
@@ -21,7 +21,7 @@ namespace WebApi.Repository
             throw new NotImplementedException();
         }
 
-        public Students GetStudentById(int Id)
+        public Employees GetStudentById(int Id)
         {
             return FindByCondition(owner => owner.Id.Equals(Id))
                 .FirstOrDefault();

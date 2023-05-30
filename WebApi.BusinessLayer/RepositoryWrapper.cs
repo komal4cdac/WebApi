@@ -17,7 +17,7 @@ namespace WebApi.Repository
         //{
         //    _repoContext = myWorldDbContext;
         //}
-        //public IStudentRepository Student
+        //public IStudentRepository Employee
         //{
         //    get
         //    {
@@ -36,10 +36,10 @@ namespace WebApi.Repository
         //}
 
 
-        private MyWorldDbContext _repoContext;
-        private IStudentRepository _owner;
+        private EmployeeDbContext _repoContext;
+        private IEmployeeRepository _owner;
        
-        public IStudentRepository Student
+        public IEmployeeRepository Employee
         {
             get
             {
@@ -51,7 +51,7 @@ namespace WebApi.Repository
             }
         }
        
-        public RepositoryWrapper(MyWorldDbContext repositoryContext)
+        public RepositoryWrapper(EmployeeDbContext repositoryContext)
         {
             _repoContext = repositoryContext;
         }

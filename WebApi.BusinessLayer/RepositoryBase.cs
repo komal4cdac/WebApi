@@ -12,8 +12,8 @@ namespace WebApi.Repository
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected MyWorldDbContext RepositoryContext { get; set; }
-        public RepositoryBase(MyWorldDbContext repositoryContext)
+        protected EmployeeDbContext RepositoryContext { get; set; }
+        public RepositoryBase(EmployeeDbContext repositoryContext)
         {
             RepositoryContext = repositoryContext;
         }

@@ -8,7 +8,7 @@ namespace WebApi.Contracts.RepositoryWrapper
 {
     public interface IRepositoryWrapper
     {
-        IStudentRepository Student { get; }
+        IEmployeeRepository Employee { get; }
       
         void Save();
     }

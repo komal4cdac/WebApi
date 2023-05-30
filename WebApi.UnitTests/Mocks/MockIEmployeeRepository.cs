@@ -9,14 +9,14 @@ using WebApi.Data.Entities;
 
 namespace WebApi.UnitTests.Mocks
 {
-    internal class MockIStudentRepository
+    internal class MockIEmployeeRepository
     {
-        public static Mock<IStudentRepository> GetMock()
+        public static Mock<IEmployeeRepository> GetMock()
         {
-            var mock = new Mock<IStudentRepository>();
-            var students = new List<Students>()
+            var mock = new Mock<IEmployeeRepository>();
+            var employees = new List<Employees>()
         {
-            new Students()
+            new Employees()
             {
                 Id= 1,
                 Age=20,
@@ -25,7 +25,7 @@ namespace WebApi.UnitTests.Mocks
                 LastName="narkhede"
 
             },
-            new Students()
+            new Employees()
             {
                 Id= 2,
                 Age=22,
@@ -36,9 +36,9 @@ namespace WebApi.UnitTests.Mocks
             }
         };
             mock.Setup(m => m.FindAll())
-                    .Returns(() => students);
+                    .Returns(() => employees);
             mock.Setup(m => m.GetStudentById(It.IsAny<int>()))
-             .Returns((int id) => students.FirstOrDefault(o => o.Id == id));
+             .Returns((int id) => employees.FirstOrDefault(o => o.Id == id));
             return mock;
         }
     }

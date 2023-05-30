@@ -9,9 +9,9 @@ namespace WebApi.Service_Extensions
     {
         public static void ConfigureMySqlContext(this IServiceCollection services, IConfiguration config)
         {
-            var connectionString = config["ConnectionString:MyWorldDBConnection"];
+            var connectionString = config["ConnectionString:EmployeeDBConnection"];
             
-            services.AddDbContext<MyWorldDbContext>(options =>
+            services.AddDbContext<EmployeeDbContext>(options =>
             {
                 options.UseSqlServer(connectionString);
             });
